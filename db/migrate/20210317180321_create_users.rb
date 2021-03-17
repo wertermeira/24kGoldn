@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
     create_table :users do |t|
       t.string :name
       t.string :uid
+      t.string :email
       t.jsonb :credentials
       t.string :token
       t.integer :lock_version, defailt: 0
