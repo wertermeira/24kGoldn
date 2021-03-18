@@ -30,7 +30,7 @@ class Ranking
       end
       each_from_array([*to_up..to_down])
     end
-    @novos_ids
+    { ids: @novos_ids, all_ids: @ids }
   end
 
   private
