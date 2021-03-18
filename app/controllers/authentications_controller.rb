@@ -1,4 +1,5 @@
 class AuthenticationsController < ApplicationController
+  skip_before_action :require_login
   def create
     user = AuthService.new(auth_hash).call
     url_callback = request.env['omniauth.params']['url_callback']
