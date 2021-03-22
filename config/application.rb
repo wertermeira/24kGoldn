@@ -26,6 +26,7 @@ module Goldn
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/providers)
 
     # Configuration for the application, engines, and railties goes here.
     #

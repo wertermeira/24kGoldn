@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.8'
 
+# Typhoeus wraps libcurl in order to make fast and reliable requests.
+gem 'typhoeus'
 gem 'omniauth', '~> 1.7', '>= 1.7.1'
 gem 'omniauth-oauth2', '~> 1.3', '= 1.3.1'
 gem 'omniauth-spotify', '~> 0.0.13'
