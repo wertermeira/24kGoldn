@@ -7,6 +7,8 @@ class Ranking
 
   def call
     user_score = UserScore.find_by(user_id: user_id)
+    return { ids: [], all_ids: [] } if user_score.blank?
+
     total = UserScore.count
     @ids = UserScore.order(max_score: :desc).pluck(:id)
     position = @ids.index(user_score.id)
