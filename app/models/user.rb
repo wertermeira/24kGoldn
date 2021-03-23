@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_create :generate_token, :generate_name
+  has_many :user_scores, dependent: :destroy
 
   private
 
