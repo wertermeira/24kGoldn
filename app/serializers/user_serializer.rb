@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :product
 
   def id
     object.name
