@@ -26,7 +26,12 @@ class SpotifyPlayerService
     devices = spotify.player_devices['devices']
     return if devices.blank?
 
-    devices.first['id']
+    array_devices = []
+    devices.each do |device|
+      item = { id: device.dig('id'), type: device.dig('type') }
+      array_devices.push(item)
+    end
+    array_devices.sort_by { |item| item[:type] }&.first[:id]
   end
 
   private
