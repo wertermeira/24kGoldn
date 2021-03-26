@@ -13,6 +13,10 @@ class SpotifyProvider
     spotify_track.save(id)
   end
 
+  def album_save(id)
+    spotify_album.save(id)
+  end
+
   def player_play(payload:, device_id:)
     spotify_player.play(payload: payload, device_id: device_id)
   end
@@ -41,6 +45,10 @@ class SpotifyProvider
 
   def spotify_track
     Spotify::Track.new(token)
+  end
+
+  def spotify_album
+    Spotify::Album.new(token)
   end
 
   def token
