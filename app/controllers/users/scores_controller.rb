@@ -1,5 +1,7 @@
 module Users
   class ScoresController < ApplicationController
+    skip_before_action :require_login, only: :ranking
+
     def index
       data = Ranking.new(current_user.id).call
       @scores = UserScore.where(id: data[:ids]).order(max_score: :desc)
