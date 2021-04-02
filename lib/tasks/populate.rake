@@ -7,5 +7,4 @@ namespace :populate do
       UserScore.create(user: user, max_score: score)
     end
   end
-
 end

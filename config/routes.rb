@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   resources :users, only: :show do
     collection do
-      resources :scores, only: %i[index create], module: :users
+      resources :scores, only: %i[index create], module: :users do
+        get 'ranking/:users', to: 'scores#ranking', on: :collection
+      end
     end
   end
 end
